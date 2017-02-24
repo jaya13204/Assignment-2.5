@@ -1,0 +1,77 @@
+1.Explain what is a cluster and what is a hadoop cluster
+
+Cluster:
+
+*Cluster is the collection of particular set of objects based upon their characteristics and 
+aggregating them  according to their similarities.
+*Clustering is very essential tool for analyzing bigdata.
+*Clustering algorithms come with high computational cost because bigdata always
+ refers to terabytes and petabytes of data.
+*Clusters are resilient to failures.
+*Clusters are scalable.
+*The main benefit of using clustering is the cost.
+
+
+Hadoop cluster:
+
+*Hadoop cluster boosts the speed of data analysis applications.
+*A computer cluster used for Hadoop is called Hadoop Cluster. 
+*Hadoop clusters are scalable and highly resistant to failures.
+*Hadoop cluster is designed specifically for storing and analyzing huge amounts of 
+unstructured data.
+*Hadoop clusters are composed of three types of node: 
+-master nodes
+-worker nodes
+-client nodes. 
+*Hadoop cluster will run in low cost commodity hardwares.
+*Clusters of three or more machines typically use a single NameNode and ResourceManager
+ with all the other nodes as slave nodes.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Explain the components of Hadoop 1.x
+
+The major components of hadoop are
+*MapReduce
+*HDFS
+
+*MapReduce:Mapreduce is used for processing the stored data.MapReduce is a 
+Batch Processing or Distributed Data Processing Module. It is built by following Google’s 
+MapReduce Algorithm. It is also know as “MR V1” or “Classic MapReduce” as it is part of Hadoop 1.x.
+It is composed of two main components:
+
+-Job Tracker:It is the service that farms out MapReduce tasks to specific nodes in the cluster,ideally
+the nodes that have the data or atleast are in same rack.Controls overall execution of map reduce jobs.
+Job Tracker runs on a seperate node and not usually on data node.Job tracker talks to the name node to 
+determine the location of data.
+
+
+-Task Tracker:TaskTracker is replaced by Node Manager in MRv2.TaskTrackers will be assigned Mapper and
+ Reducer tasks to execute by JobTracker.It periodically communicates with the job tracker to give updates
+receives instructions.
+
+
+
+*HDFS:Hadoop Distributed File System is used for storage purpose in hadoop.It consists of single namenode,
+called as master which manages the namespace of filesystem.There are number of data nodes which manages 
+the storage to the nodes they run.Hdfs is designed to work with large data sets.The default block size is 64MB.The
+three main components of HDFS are:
+
+
+-Name Node:
+                    Name node is also known as master and stores only metadata of HDFS.Name node is a 
+single point of failure in hadoop cluster.Name node is so critical to HDFS and when the name node is down.
+HDFS/Hadoop cluster is inaccessible.Name node contains Hadoop Filesystem tree.It contains in-memory mapping 
+of which blocks are  stored in which data node.
+
+-Secondary NameNode:
+                             Secondary Name Node is a specially dedicated node in HDFS.Its vital role is to take 
+checkpoints of the filesystem metadata present on namenode.It is not a backup for Namenode.Its just
+a helper node  for Namenode.
+
+
+-Data Node:
+                  Datanode  is called as slaves.It is responsible for storing the actual data in hdfs.Data node announces
+itself to the name node along with the list of blocks which are responsible for,when it starts.It sends signal to the name
+node periodically to verify if it is active.It is called as Workhouse of the system.It performs all block operation 
+including checksum.
